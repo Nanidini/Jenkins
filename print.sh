@@ -1,17 +1,17 @@
-echo "Provide GIT Repo"
+#echo "Provide GIT Repo"
 
-read readgitRepo
+read $1
 
-echo "Your entered $readgitRepo"
+echo "Your entered $1"
 #Read all files that are part of Git
-echo "Provide localFolder to clone"
+#echo "Provide localFolder to clone"
 
-read localFolder
+read $2
 
-echo "Your entered $localFolder"
-git clone "$readgitRepo" "$localFolder"
+echo "Your entered $2"
+git clone "$1" "$2"
 
-fileNames=$(git -C $localFolder log origin/main --name-only --pretty=format: main)
+fileNames=$(git -C $2 log origin/main --name-only --pretty=format: main)
 
 #convert variable to array
 
@@ -27,4 +27,4 @@ do
 
     printf " " >> $element 
 
-done
+done 
