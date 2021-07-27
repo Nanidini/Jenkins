@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Listfiles') {
             steps {
-                    sh print.sh "https://github.com/Nanidini/Jenkins.git" "jenkins"
+                    sh 'print.sh "https://github.com/Nanidini/Jenkins.git" "jenkins"'
             }
         }
     }
