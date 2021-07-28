@@ -6,12 +6,12 @@ echo "Your entered $1"
 #Read all files that are part of Git
 #echo "Provide localFolder to clone"
 
-#read $2
+read $2
 
 echo "Your entered $2"
 git clone "$1" 
 
-fileNames=$(git -C $1 log origin/main --name-only --pretty=format: main)
+fileNames=$(git -C $2 log origin/main --name-only --pretty=format: main)
 
 #convert variable to array
 
